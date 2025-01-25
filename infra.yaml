@@ -1,3 +1,4 @@
+services:
 redis:                    # Defines the second service: redis
     image: "redis:alpine"   # Pulls an existing image from Docker Hub
                             # redis is the official Redis image
