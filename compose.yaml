@@ -1,0 +1,24 @@
+# Services is a key used to define all the containers you want to run in a multi container environment
+services:
+  web:                      # Defines the first service: web
+    build: .                # This tells Docker Compose to build an image from the Dockerfile in the current dir
+    ports:                  # Web service will be available on port 8000 on local machine
+      - "8000:5000"         # Defines the port mapping between the host and the container (hostPort:containerPort)
+                            # The application in the container is listening on port 5000
+                            # If you visit http://localhost:8000 it will access the Flask app inside the container
+    develop:
+      watch:                # Develop/watch allows a preview of services that are automatically updated as you edit code
+        - action: sync
+          path: .
+          target: /code     # When a file is changed, Compose syncs the file to the target directory (/code)
+
+  redis:                    # Defines the second service: redis
+    image: "redis:alpine"   # Pulls an existing image from Docker Hub
+                            # redis is the official Redis image
+                            # alpine is the Alpine Linux based version of the Redis image
+
+# Summary
+# This compose file defines two services: web and redis
+# The web service uses an image built from the Dockerfile in the current directory
+# It binds the container and the host machine to the exposed ports
+# The redis service uses a public redis image pulled from the Docker Hub registry
