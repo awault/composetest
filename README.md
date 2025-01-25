@@ -21,3 +21,20 @@ With Docker Compose, you can define all your services in a single compose.yaml o
 The branch *singlecomposefile* provides a simple example of an environment with two containers, defined in a single compose.yaml
 
 The branch *doublecomposefile* provides a similar example, but it splits the services into two .yaml files. (compose.yaml & infra.yaml)
+
+# Additional Commands
+
+- `docker compose ps`
+    - Run this command in a second terminal to see what services are running.
+
+- `docker compose up -d`
+    - Run this command to run your services in the background
+
+- `docker compose stop`
+    - Stops services that are running
+
+- `docker compose down`
+    - Takes everything down, removes containers entirely.
+
+- `docker compose --help`
+    - Instructions for additional commands.
