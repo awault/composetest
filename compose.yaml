@@ -1,5 +1,5 @@
 include:                   # A top level attribute to select additional .yaml files
-  - infra.yaml
+    - infra.yaml
 # Services is the key used to specify containers you want to run in a multi container environment
 services:
   web:                      # Defines the first service: web
