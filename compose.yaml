@@ -1,7 +1,6 @@
 include:                   # A top level attribute to select additional .yaml files
-    - infra.yaml
-# Services is the key used to specify containers you want to run in a multi container environment
-services:
+  - infra.yaml
+services:            # Services is the key used to specify containers you want to run in a multi container environment
   web:                      # Defines the first service: web
     build: .                # This tells Docker Compose to build an image from the Dockerfile in the current dir
     ports:                  # Web service will be available on port 8000 on local machine
