@@ -1,0 +1,8 @@
+redis:                    # Defines the second service: redis
+    image: "redis:alpine"   # Pulls an existing image from Docker Hub
+                            # redis is the official Redis image
+                            # alpine is the Alpine Linux based version of the Redis image
+
+# Summary
+# This compose file defines one service: redis
+# The redis service uses a public redis image pulled from the Docker Hub registry

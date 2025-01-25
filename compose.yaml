@@ -1,4 +1,6 @@
-# Services is a key used to define all the containers you want to run in a multi container environment
+include:                   # A top level attribute to select additional .yaml files
+  - infra.yaml
+# Services is the key used to specify containers you want to run in a multi container environment
 services:
   web:                      # Defines the first service: web
     build: .                # This tells Docker Compose to build an image from the Dockerfile in the current dir
@@ -12,13 +14,8 @@ services:
           path: .
           target: /code     # When a file is changed, Compose syncs the file to the target directory (/code)
 
-  redis:                    # Defines the second service: redis
-    image: "redis:alpine"   # Pulls an existing image from Docker Hub
-                            # redis is the official Redis image
-                            # alpine is the Alpine Linux based version of the Redis image
 
 # Summary
-# This compose file defines two services: web and redis
+# This compose file defines the web service
 # The web service uses an image built from the Dockerfile in the current directory
 # It binds the container and the host machine to the exposed ports
-# The redis service uses a public redis image pulled from the Docker Hub registry
