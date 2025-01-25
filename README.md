@@ -1,4 +1,8 @@
-# Directions for Docker Compose
+# Docker Compose Quickstart Tutorial
+The tutorial can be found at the following link:
+https://docs.docker.com/compose/gettingstarted/
+
+## Directions
 
 To build and launch the app, type the following commands in bash:
 
@@ -16,13 +20,17 @@ Or in the original terminal you can press:
 
 `CTRL + C`
 
+## Services
+
 With Docker Compose, you can define all your services in a single compose.yaml or you can use multiple compose files to customize your environment.
+
+## Branches
 
 The branch *singlecomposefile* provides a simple example of an environment with two containers, defined in a single compose.yaml
 
 The branch *doublecomposefile* provides a similar example, but it splits the services into two .yaml files. (compose.yaml & infra.yaml)
 
-# Additional Commands
+## Additional Commands
 
 - `docker compose ps`
     - Run this command in a second terminal to see what services are running.
